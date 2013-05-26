@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AllbrandsUSA - Contacto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script type="text/javascript" src="phonegap.js"></script>
+<link rel="stylesheet" href="js/jquery.mobile/jquery.mobile-1.1.1.min.css"/>
+<link rel="stylesheet" href="js/jquery.mobile/allBrandsUSA.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+
+<script src="js/jquery.mobile/jquery-1.7.1.min.js"></script>
+<script src="js/jquery.mobile/jquery.mobile-1.1.1.min.js"></script>
+<script type="text/javascript">
+	var useUpdateFunctions = false;
+	var executeFilters = false;
+</script>
+<script src="js/main-functions.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body onload="onLoad()">
+	<div id="page_about" data-role="page">
+    	<div data-role="header" data-position="fixed" data-theme="f">
+            <a data-role="button" href="tel:8883220925" data-icon="phone" data-iconpos="left">Tel.</a>
+                <h2>AllbrandsUSA</h2>
+            <a data-role="button" href="mailto:armando@allbrandsusa.com" data-icon="email_1" data-iconpos="right">Email</a>
+
+            <div class="second_menu">
+               <a class="icon_left" data-role="button" data-rel="back" data-transition="fade" href="javascript:history.back(1)" data-icon="arrow-l" data-iconpos="left">Atras</a>
+               <h3 class="single_export">Contáctenos</h3>
+           </div>
+        </div><!-- /header -->
+        <div data-role="content" class="content_contact">
+			<h3>AllbrandsUSA Corp</h3>
+			<p>
+            3319 NW 74th Ave.<br>
+			Miami, Fl 33122<br>
+			Phone: (888) 322-0925<br>
+			Fax: (866) 279-3875</p>
+            <hr>
+            <p>
+            Direct Sales: (305) 458-1068<br>
+            MSN: <a href="mailto:allbrandsusa@hotmail.com">allbrandsusa@hotmail.com</a><br>
+            MSN: <a href="mailto:allbrands@hotmail.com">allbrands@hotmail.com</a><br>
+            EMAIL: <a href="mailto:armando@allbrandsusa.com">armando@allbrandsusa.com</a><br>
+            AOL:allbrandscorp<br>
+            SKYPE: allbrandscorp</p>
+            <hr>
+            <p>
+            Bolivia Av. 16 de Julio "El Prado"<br>
+            Edificio Herman Piso 13 Of. 1301<br>
+            591 - 2 - 2150154<br>
+            La Paz - Bolivia</p>
+			<form id="form_contact"  method="POST">
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="txtCName">
+                                Nombre
+                            </label>
+                            <input name="name" id="txtCName" placeholder="Juan Perez" value="" type="text" />
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="txtCMail">
+                                Correo
+                            </label>
+                            <input name="usermail" id="txtCMail" placeholder="juanperez@gmail.com" value="" type="email" />
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="txtCMsg" >
+                                Comentario
+                            </label>
+                            <textarea name="message" id="txtCMsg" placeholder=""></textarea>
+                        </fieldset>
+                    </div>
+                    <input type="hidden" name="type" value="appB"/>
+                    <input value="Enviar" type="button" onclick="enviaContacto()" />
+                </form>       
+        </div><!-- /content_contact -->
+            <div data-role="footer" data-position="fixed" data-theme="f">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="companies.html" data-url="companies.html" rel="external" data-icon="info">Inventario</a></li>
+                        <li><a href="export.html" data-url="export.html" rel="external" data-icon="check">Exportar</a></li>
+                        <li><a href="contact.html" data-url="contact.html" rel="external" data-icon="grid">Contacto</a></li>
+                    </ul>        
+                </div>
+            </div><!-- /footer -->
+    </div><!-- /page_index -->
+</body>
+</html>

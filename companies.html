@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AllbrandsUSA - Inventario</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script type="text/javascript" src="phonegap.js"></script>
+        <link rel="stylesheet" href="js/jquery.mobile/jquery.mobile-1.1.1.min.css"/>
+        <link rel="stylesheet" href="js/jquery.mobile/allBrandsUSA.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+
+        <script src="js/jquery.mobile/jquery-1.7.1.min.js"></script>
+        <script src="js/jquery.mobile/jquery.mobile-1.1.1.min.js"></script>
+        <script type="text/javascript">
+            var useUpdateFunctions = false;
+            var executeFilters = true;
+        </script>
+        <script src="js/update-functions.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/main-functions.js" type="text/javascript" charset="utf-8"></script>
+        <style type="text/css">
+            #div_brand a.selected{
+                border:2px #3373a5 solid;
+            }
+        </style>
+    </head>
+
+    <body onload="onLoad()">
+        <div id="page_list_companies" data-role="page">
+
+            <div data-role="header" data-position="fixed" data-theme="f">
+                <a data-role="button" href="tel:8883220925" data-icon="phone" data-iconpos="left">Tel.</a>
+                <h2>AllbrandsUSA</h2>
+                <a data-role="button" href="mailto:armando@allbrandsusa.com" data-icon="email_1" data-iconpos="right">Email</a>
+                <div class="second_menu">
+                <a class="icon_left" data-role="button" data-rel="back" data-transition="fade" href="#" data-icon="arrow-l" data-iconpos="left">Atras</a>
+                <h3>Inventario</h3>
+                <a class="icon_right" data-role="button" href="#page_list_products" onclick="bus.filterProduct('All',0);" data-transition="fade" data-icon="search" data-iconpos="right">Filtrar</a>
+                </div>
+            </div><!-- /header -->
+
+            <div data-role="content" class="content_page">
+                
+                <div id="r_cat" data-role="fieldcontain" >
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>
+                            Categorías:
+                        </legend>
+                        <input id="radio1" name="" value="Laptops" type="radio" onclick="bus.filterBrand(this.value);">
+                        <label for="radio1">
+                            Laptops
+                        </label>
+                        <input id="radio2" name="" value="Electronics" type="radio" onclick="bus.filterBrand(this.value);">
+                        <label for="radio2">
+                            Electronics
+                        </label>
+                        <input id="radio3" name="" value="Others" type="radio" onclick="bus.filterBrand(this.value);">
+                        <label for="radio3">
+                            Others
+                        </label>
+                    </fieldset>
+                </div>
+                <div id="div_brand" class="ui-grid-b">Seleccione una categoría</div>
+            </div><!-- /content_page -->
+            <div data-role="footer" data-position="fixed" data-theme="f">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="companies.html" data-url="companies.html" data-icon="info">Inventario</a></li>
+                        <li><a href="export.html" data-url="export.html" rel="external" data-icon="check">Exportar</a></li>
+                        <li><a href="contact.html" data-url="contact.html" rel="external" data-icon="grid">Contacto</a></li>
+                    </ul>        
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page_index -->
+        <div id="page_list_products" data-role="page">
+            <div data-role="header" data-position="fixed" data-theme="f">
+            	<a data-role="button" href="tel:8883220925" data-icon="phone" data-iconpos="left">Tel.</a>
+                <h2>AllbrandsUSA</h2>
+                <a data-role="button" href="mailto:armando@allbrandsusa.com" data-icon="email_1" data-iconpos="right">Email</a>
+                <div class="second_menu">
+                	<a class="icon_left" data-role="button" data-rel="back" data-transition="fade" href="#" data-icon="arrow-l" data-iconpos="left">Atras</a>
+                	<h3>Productos</h3>
+                	<a class="icon_right" data-role="button" href="#page_list_products" onclick="bus.filterProduct('All',0);" data-transition="fade" data-icon="arrow-3" data-iconpos="right">Filtrar</a>
+                </div>
+            </div><!-- /header -->
+            <div data-role="content" class="content_page">
+                <div id="r_status" data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <legend>
+                            Estado:
+                        </legend>
+                        <input id="radio1" name="" value="All" type="radio" onclick="bus.filterProduct(this.value,0);" checked="checked">
+                        <label for="radio1">
+                            Todos
+                        </label>
+                        <input id="radio2" name="" value="New" type="radio" onclick="bus.filterProduct(this.value,0);">
+                        <label for="radio2">
+                            Nuevos
+                        </label>
+                        <input id="radio3" name="" value="Refurbished" type="radio" onclick="bus.filterProduct(this.value,0);">
+                        <label for="radio3">
+                            Refurbished
+                        </label>
+                    </fieldset>
+                </div><br />
+                <ul id="ul_products" data-role="listview" data-divider-theme="d">
+                </ul>
+                <div id="div_mas"></div>
+            </div><!-- /content_page -->
+           <div data-role="footer" data-position="fixed" data-theme="f" >
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="companies.html" data-url="companies.html" rel="external" data-icon="info">Inventario</a></li>
+                        <li><a href="export.html" data-url="export.html" rel="external" data-icon="check">Exportar</a></li>
+                        <li><a href="contact.html" data-url="contact.html" rel="external" data-icon="grid">Contacto</a></li>
+                    </ul>        
+                </div>
+            </div><!-- /footer -->
+        </div><!-- /page_index -->
+        <div data-role="page" id="page_detail_products">
+            <div data-role="header" data-position="fixed" data-theme="f">
+            	<a data-role="button" href="tel:8883220925" data-icon="phone" data-iconpos="left">Tel.</a>
+                <h2>AllbrandsUSA</h2>
+                <a data-role="button" href="mailto:armando@allbrandsusa.com" data-icon="email_1" data-iconpos="right">Email</a>
+                <div class="second_menu">
+                	<a class="icon_left" data-role="button" data-rel="back" data-transition="fade" href="#" data-icon="arrow-l" data-iconpos="left">Atras</a>
+                	<h3>Producto</h3>
+                	<a class="icon_right" data-role="button" href="#page_list_products" onclick="bus.filterProduct('All',0);" data-transition="fade" data-icon="arrow-3" data-iconpos="right">Filtrar</a>
+                </div>
+            </div><!-- /header -->
+            <div data-role="content" id="content_detail">
+                <h3>Tipo de producto: <span id="dCategory"></span></h3>
+                <hr>
+                <p>
+                    <img id="dProBrand" src="images/logo_acer.png" /><br />
+                    <strong>MPN:</strong> <span id="dProTitle"></span><br />
+                    <strong>Condición:</strong> <span id="dProStatus"></span><br />
+                    <span class="note">Precio: $</span><span class="note" id="dProPrice"></span>
+                <p>
+                    <strong>Descripción:</strong>
+                <div id="dProDescription"></div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-theme="f">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="companies.html" data-url="companies.html" rel="external" data-icon="info">Inventario</a></li>
+                        <li><a href="export.html" data-url="export.html" rel="external" data-icon="check">Exportar</a></li>
+                        <li><a href="contact.html" data-url="contact.html" rel="external" data-icon="grid">Contacto</a></li>
+                    </ul>        
+                </div>
+            </div><!-- /footer -->
+        </div>
+    </body>
+</html>

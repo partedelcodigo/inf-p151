@@ -1,0 +1,115 @@
+/*------------------------------------*\
+    app AllBrandsUSA
+\*------------------------------------*/
+
+/*------------------------------------*\
+	Proyect		: Clasificacion de empresas
+	Description	: Design based on CSS3
+	Filename   	: style.css
+	Version    	: 1.0
+	Date       	: Mar 26, 2013 - 0160
+\*------------------------------------*/
+
+#basic-jqm-gallery-page div[data-role=content] .ui-grid-b img {
+	width: 100%;
+	border-left: solid white 4px;
+	border-right: solid white 4px;
+	}
+
+/* make the gid 100% wide */
+#basic-jqm-gallery-page div[data-role=content] .ui-grid-b {
+	width: 100%;
+	}
+	
+/* Content Home */
+.content_home{
+	text-align:center;
+}
+.content_page{}
+.content_page img.align_right{ 
+	float:right; 
+	margin-left: 10px;
+	margin-bottom:10px;
+}	
+.content_contact{}
+
+/* Listado de productos */
+div[data-role="content"] .note {
+	color:#497BAE;
+	font-weight:700;
+	}
+div[data-role="content"] .ui-li .ui-btn-inner a.ui-link-inherit {
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:92px;
+	}
+div[data-role="content"] .ui-li-heading {
+	font-size:14px;
+	margin-top:6px;
+	}
+
+/* modificacion de radio bottom companies */
+div.ui-radio{
+	width: 33%;
+}
+div.ui-radio label{
+	width: 100%;
+}
+
+
+/* arreglo de enlaces a logos de companies */
+
+.content_page .ui-block-a a,
+.content_page .ui-block-b a,
+.content_page .ui-block-c a{
+	display: block;
+	border: none;
+	text-align: center;
+}
+
+/* para ocultar loading DIV */
+div.hide_comp {
+	display: none;
+	visibility: hidden;
+}
+/* para segundo header DIV */
+.second_menu{
+	text-align: center;
+	padding: 0 5px;
+}
+.second_menu a.icon_left{
+	float: left;
+}
+.second_menu a.icon_right{
+	float: right;
+}
+.second_menu h3{
+	display: inline-block;
+	margin: 7px 0;
+}
+.second_menu h3.single_export{
+	margin-left:-60px;
+}
+.clear{
+	clear: both;
+}
+
+.ui-btn-up-f{
+	border: 1px solid #237aa0;
+}
+
+/* Botones personalizados */
+.ui-icon-phone { 
+    background: url("../images/icon_telephone2.png") no-repeat rgba(0, 0, 0, 0.4) !important; 
+}
+.ui-icon-email_1 { 
+    background: url("../images/icon_email.png") no-repeat rgba(0, 0, 0, 0.4) !important; 
+}
+
+/* Espaciado para orietacion apaizada */
+@media (min-width: 450px){
+	.ui-field-contain label.ui-input-text{
+		width: 25%;
+	}
+}
+
